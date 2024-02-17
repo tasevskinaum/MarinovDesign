@@ -25,13 +25,10 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
-                                Pages
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i></i>
+                                Product management
                             </a>
                             <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                                <li class="sidebar-item">
-                                    <a href="{{ route('materials.index') }}" class="sidebar-link">Materials</a>
-                                </li>
                                 <li class="sidebar-item">
                                     <a href="{{ route('categories.index') }}" class="sidebar-link">Categories</a>
                                 </li>
@@ -39,9 +36,18 @@
                                     <a href="{{ route('types.index') }}" class="sidebar-link">Types</a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="{{ route('faqs.index') }}" class="sidebar-link">FAQs</a>
+                                    <a href="{{ route('materials.index') }}" class="sidebar-link">Materials</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="{{ route('maintenances.index') }}" class="sidebar-link">Maintenance tips</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('faqs.index') }}" class="sidebar-link">
+                                <i class="fa-solid fa-question pe-2"></i>
+                                FAQs
+                            </a>
                         </li>
                     </ul>
                 </div>
