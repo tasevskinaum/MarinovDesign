@@ -1,15 +1,20 @@
 <?php
 
+
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class CustomOrder extends Model
-{
-    use HasFactory;
-    use SoftDeletes;
 
-    protected $guarded = [];
+{
+
+    protected $table = 'custom_orders';
+
+    protected $fillable = ['customer_id', 'name', 'email', 'message', 'image', 'link'];
+
 }

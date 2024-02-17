@@ -92,4 +92,18 @@
         </div>
     </div>
 </div>
+<div class="card">
+
+    <div class="card-header">
+
+        <h3 class="card-title">CRUD Section</h3>
+
+    </div>
+
+    <div class="card-body">
+
+    <a href="{{ route('custom-orders.index') }}" class="btn btn-primary">Custom Order</a>
+    </div>
+
+</div>
 @endsection
