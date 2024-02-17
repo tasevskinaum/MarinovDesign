@@ -30,7 +30,7 @@
                             </a>
                             <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                                 <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Page 1</a>
+                                    <a href="{{ route('materials.index') }}" class="sidebar-link">Materials</a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a href="#" class="sidebar-link">Page 2</a>
