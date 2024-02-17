@@ -12,7 +12,7 @@
         {{ session('success') }}
     </div>
     @endif
-    <div class="accordion" id="faqAccordion">
+    <div class="accordion " id="faqAccordion">
         @foreach ($faqs as $faq)
         <div class="accordion-item">
             <div class="d-flex justify-content-between align-items-center">

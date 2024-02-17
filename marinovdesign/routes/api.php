@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\TypesApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('faq', [FaqController::class, 'index']);
+Route::get('jewelry', [TypesApiController::class, 'index']);
