@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('materials', MaterialController::class)->except(['show', 'create']);
     Route::resource('categories', CategoryController::class)->except(['show', 'create']);
+    Route::resource('faqs', FaqController::class)->except(['show']);
 });
 
 require __DIR__ . '/auth.php';
