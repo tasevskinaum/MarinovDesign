@@ -33,7 +33,7 @@
                                     <a href="{{ route('materials.index') }}" class="sidebar-link">Materials</a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">Page 2</a>
+                                    <a href="{{ route('categories.index') }}" class="sidebar-link">Categories</a>
                                 </li>
                             </ul>
                         </li>
