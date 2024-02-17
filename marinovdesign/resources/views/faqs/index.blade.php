@@ -22,13 +22,16 @@
                     </button>
                 </h2>
 
-                <div class="btn-group d-flex gap-2  " role="group">
-                    <a href="{{ route('faqs.show', $faq->id) }}" class="btn btn-info btn-block">Show</a>
-                    <a href="{{ route('faqs.edit', $faq->id) }}" class="btn btn-secondary btn-block">Edit</a>
-                    <form action="{{ route('faqs.destroy', $faq->id) }}" method="POST" ">
+                <div class=" d-flex gap-2   " role="group">
+                    <a href="{{ route('faqs.show', $faq->id) }}" class="btn btn-secondary btn-block"> <i class="fas fa-eye"></i> Show
+                    </a>
+                    <a href="{{ route('faqs.edit', $faq->id) }}" class="btn btn-warning btn-block text-white"> <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <form action="{{ route('faqs.destroy', $faq->id) }}" method="POST" class="m-0"">
                         @csrf
                         @method('DELETE')
-                        <button type=" submit" class="btn btn-danger btn-block  ">Delete</button>
+                        <button type=" submit" class="btn btn-danger   "> <i class="fas fa-trash-alt"></i> Delete
+                        </button>
                     </form>
                 </div>
             </div>
