@@ -46,4 +46,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Maintenance::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(ProductGallery::class);
+    }
 }
