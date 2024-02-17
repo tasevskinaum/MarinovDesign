@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/maintenance', [App\Http\Controllers\Api\MaintenanceController::class, 'index']) -> name('maintenance.data');
+Route::post('/maintenance', [App\Http\Controllers\Api\MaintenanceController::class, 'store']) -> name('maintenance.store');

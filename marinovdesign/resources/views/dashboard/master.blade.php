@@ -35,6 +35,9 @@
                                 <li class="sidebar-item">
                                     <a href="#" class="sidebar-link">Page 2</a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a href="{{route('maintenance')}}" class="sidebar-link">Maintenance</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
