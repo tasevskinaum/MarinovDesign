@@ -38,6 +38,9 @@
                                 <li class="sidebar-item">
                                     <a href="{{ route('faqs.index') }}" class="sidebar-link">FAQs</a>
                                 </li>
+                                <li class="sidebar-item">
+                                <a href="{{ route('customOrders') }}" class="sidebar-link">Custom Orders</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

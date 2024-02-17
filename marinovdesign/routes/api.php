@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\CustomOrderController ;
 use App\Http\Controllers\API\FaqController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\CustomOrder;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('faqs', [FaqController::class, 'index'])->name('api.faqs.all');
+Route::post('/custom-orders', [CustomOrderController::class, 'index'])->name('customOrders.index');

@@ -5,6 +5,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('faqs', FaqController::class)->except(['show']);
 });
 
+Route::get('/customOrders', [CustomOrderController::class, 'index'])->name('customOrders');
 require __DIR__ . '/auth.php';
