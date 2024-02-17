@@ -36,6 +36,9 @@
                                     <a href="{{ route('categories.index') }}" class="sidebar-link">Categories</a>
                                 </li>
                                 <li class="sidebar-item">
+                                    <a href="{{ route('types.index') }}" class="sidebar-link">Types</a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a href="{{ route('faqs.index') }}" class="sidebar-link">FAQs</a>
                                 </li>
                             </ul>
