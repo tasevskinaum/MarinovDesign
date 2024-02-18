@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container-fluid">
+    <x-alert type="success" />
+    <x-alert type="danger" />
+
     <div class="mb-3">
         <h4>Admin Dashboard</h4>
     </div>
