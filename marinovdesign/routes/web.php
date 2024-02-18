@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaintenanceController;
@@ -22,21 +23,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('materials', MaterialController::class)->except(['show', 'create']);
-    Route::resource('categories', CategoryController::class)->except(['show', 'create']);
-    Route::resource('faqs', FaqController::class)->except(['show']);
-    Route::resource('types', TypeController::class)->except(['show', 'create']);
-    Route::resource('maintenances', MaintenanceController::class);
-    Route::resource('products', ProductController::class);
+    Route::middleware(['super.admin.or.admin'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard.dashboard');
+        })->name('dashboard');
+
+        Route::resource('materials', MaterialController::class)->except(['show', 'create']);
+        Route::resource('categories', CategoryController::class)->except(['show', 'create']);
+        Route::resource('faqs', FaqController::class)->except(['show']);
+        Route::resource('types', TypeController::class)->except(['show', 'create']);
+        Route::resource('maintenances', MaintenanceController::class);
+        Route::resource('products', ProductController::class);
+    });
+
+    Route::middleware(['super.admin'])->group(function () {
+        Route::resource('admins', AdminController::class);
+    });
 });
 
 require __DIR__ . '/auth.php';
