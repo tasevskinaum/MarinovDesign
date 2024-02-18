@@ -25,4 +25,6 @@ Route::get('faqs', [FaqController::class, 'index'])->name('api.faqs.all');
 Route::get('get-types/{category}', [TypeController::class, 'getTypesForCategory']);
 
 // PRODUCTS API
-Route::get('/products/{type}', [App\Http\Controllers\API\ProductController::class, 'index'])->name('api.products.bytype');
+Route::get('/products', [App\Http\Controllers\API\ProductController::class, 'allProducts'])->name('api.allproducts');
+
+Route::get('/products/{type}', [App\Http\Controllers\API\ProductController::class, 'productsByType'])->name('api.products.bytype');
