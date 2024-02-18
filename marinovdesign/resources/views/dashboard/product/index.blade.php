@@ -41,9 +41,9 @@
                             @foreach($products as $product)
                             <tr>
                                 <th scope="row" class="align-middle">
-                                    <a href="#">
-                                        <img src="{{ $product->images->first()->image_url }}" alt="" style="width: 80px;" class="img-fluid">
-                                    </a>
+                                    @if($product->images->isNotEmpty())
+                                    <img src="{{ $product->images->first()->image_url }}" alt="" style="width: 80px;" class="img-fluid">
+                                    @endif
                                 </th>
                                 <td class="align-middle">
                                     <a href="#" class="text-primary fw-bold">

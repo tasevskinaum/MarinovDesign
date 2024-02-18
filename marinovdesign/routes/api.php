@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\CustomOrderController;
 use App\Http\Controllers\API\FaqController;
 use App\Http\Controllers\API\HomeDecorController;
 use App\Http\Controllers\API\JewelryController;
@@ -34,3 +35,6 @@ Route::get('home-decor', [HomeDecorController::class, 'getTypes']);
 Route::get('/products', [App\Http\Controllers\API\ProductController::class, 'allProducts'])->name('api.allproducts');
 
 Route::get('/products/{type}', [App\Http\Controllers\API\ProductController::class, 'productsByType'])->name('api.products.bytype');
+
+// Custom Orders
+Route::post('custom-orders', [CustomOrderController::class, 'store']);

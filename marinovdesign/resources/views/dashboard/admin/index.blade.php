@@ -58,6 +58,56 @@
         </div>
     </div>
 
+    <div class="row mb-2 justify-content-center">
+        <div class="col-md-8 col-lg-12 p-0">
+            <!-- Table Element -->
+            <div class="card border-0">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <small>List of all admins</small>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Role</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($admins as $admin)
+                            <tr>
+                                <td>{{ $admin->name }}</td>
+                                <td>{{ $admin->email }}</td>
+                                <td>{{ ucfirst($admin->role->name) }}</td>
+
+                                <td class="text-end">
+
+                                    <a href="{{ route('admins.edit', $admin->id) }}" class="mx-1">
+                                        <i class="fa-solid fa-pen-to-square fa-xl text-warning"></i>
+                                    </a>
+
+                                    <form action="{{ route('admins.destroy', $admin->id) }}" method="POST" class="d-inline mx-1">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="bg-transparent border-0 p-0 text-primary">
+                                            <i class="fa-solid fa-trash fa-xl text-danger"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 @endsection
 

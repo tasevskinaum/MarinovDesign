@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,7 +14,15 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('dashboard.admin.index');
+        $admins = User::select('id', 'name', 'email', 'role_id')
+            ->where('id', '!=', Auth::id())
+            ->where(function ($query) {
+                $query->where('role_id', '1')
+                    ->orWhere('role_id', '2');
+            })
+            ->get();
+
+        return view('dashboard.admin.index', compact('admins'));
     }
 
     public function store(Request $request)
@@ -45,6 +54,21 @@ class AdminController extends Controller
             return redirect()
                 ->route('admins.index')
                 ->with(['danger' => "An unexpected error occurred while creating admin. Please try again!"]);
+        }
+    }
+
+    public function destroy(User $admin)
+    {
+        try {
+            $admin->delete();
+
+            return redirect()
+                ->route('admins.index')
+                ->with(['success' => "Account deleted."]);
+        } catch (\Exception $e) {
+            return redirect()
+                ->route('admins.index')
+                ->with(['danger' => "An unexpected error occurred while deleteing account. Please try again!"]);
         }
     }
 }

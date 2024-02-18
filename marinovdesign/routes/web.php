@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomOrderController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\MaterialController;
@@ -39,6 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('types', TypeController::class)->except(['show', 'create']);
         Route::resource('maintenances', MaintenanceController::class);
         Route::resource('products', ProductController::class);
+
+        Route::get('custom-orders', [CustomOrderController::class, 'index'])->name('custom.orders.index');
     });
 
     Route::middleware(['super.admin'])->group(function () {
