@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\API\FaqController;
-use App\Http\Controllers\API\TypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\FaqController;
+use App\Http\Controllers\API\TypeController;
+use App\Http\Controllers\Api\CustomOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('faqs', [FaqController::class, 'index'])->name('api.faqs.all');
 
 Route::get('get-types/{category}', [TypeController::class, 'getTypesForCategory']);
+
+Route::get('all-images', [CustomOrderController::class, 'getAllImages']);
