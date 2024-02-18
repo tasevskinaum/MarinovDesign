@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i></i>
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i>
                                 Product management
                             </a>
                             <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -47,7 +47,7 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages1" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i></i>
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages1" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-cart-shopping pe-2"></i>
                                 Orders
                             </a>
                             <ul id="pages1" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
