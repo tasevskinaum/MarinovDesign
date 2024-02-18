@@ -30,6 +30,9 @@
                             </a>
                             <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                                 <li class="sidebar-item">
+                                    <a href="{{ route('products.index') }}" class="sidebar-link">Product</a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a href="{{ route('categories.index') }}" class="sidebar-link">Categories</a>
                                 </li>
                                 <li class="sidebar-item">
