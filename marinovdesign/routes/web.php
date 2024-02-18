@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaintenanceController;
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(['super.admin'])->group(function () {
+        Route::resource('admins', AdminController::class);
     });
 });
 

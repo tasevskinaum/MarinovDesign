@@ -46,6 +46,14 @@
                                 </li>
                             </ul>
                         </li>
+                        @if(auth()->user()->role->name == 'super_admin')
+                        <li class="sidebar-item">
+                            <a href="{{ route('admins.index') }}" class="sidebar-link">
+                                <i class="fa-solid fa-users pe-2"></i>
+                                Admins
+                            </a>
+                        </li>
+                        @endif
                         <li class="sidebar-item">
                             <a href="{{ route('faqs.index') }}" class="sidebar-link">
                                 <i class="fa-solid fa-question pe-2"></i>
