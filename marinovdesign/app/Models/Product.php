@@ -21,8 +21,7 @@ class Product extends Model
         'discount_price',
         'category_id',
         'type_id',
-        'stock',
-        'image'
+        'stock'
     ];
 
     protected $guarded = [];

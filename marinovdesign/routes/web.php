@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('faqs', FaqController::class)->except(['show']);
     Route::resource('types', TypeController::class)->except(['show', 'create']);
     Route::resource('maintenances', MaintenanceController::class);
+    Route::resource('products', ProductController::class);
 });
 
 require __DIR__ . '/auth.php';
