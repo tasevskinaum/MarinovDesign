@@ -16,6 +16,12 @@
 <!-- FontAwesome -->
 <script src="https://kit.fontawesome.com/b78630679a.js" crossorigin="anonymous"></script>
 
+<!-- Virtual Select’s CSS file  -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+
+<!-- Bootstrap FileInput CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css">
+
 @vite(['resources/css/main.css'])
 
 <!-- Scripts -->

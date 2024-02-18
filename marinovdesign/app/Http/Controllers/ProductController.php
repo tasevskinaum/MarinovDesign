@@ -20,7 +20,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('dashboard.product.index');
+        $products = Product::all();
+
+        return view('dashboard.product.index', compact('products'));
     }
 
     /**
@@ -123,7 +125,17 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        try {
+            $product->delete();
+
+            return redirect()
+                ->route('products.index')
+                ->with(['success' => "Product deleted."]);
+        } catch (\Exception $e) {
+            return redirect()
+                ->route('products.index')
+                ->with(['danger' => "An unexpected error occurred while deleting product. Please try again!"]);
+        }
     }
 
     private function uploadImage($image)
