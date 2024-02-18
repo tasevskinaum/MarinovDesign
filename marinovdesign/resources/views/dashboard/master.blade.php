@@ -46,6 +46,16 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages1" data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-gear pe-2"></i></i>
+                                Orders
+                            </a>
+                            <ul id="pages1" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                <li class="sidebar-item">
+                                    <a href="{{ route('custom.orders.index') }}" class="sidebar-link">Custom orders</a>
+                                </li>
+                            </ul>
+                        </li>
                         @if(auth()->user()->role->name == 'super_admin')
                         <li class="sidebar-item">
                             <a href="{{ route('admins.index') }}" class="sidebar-link">
