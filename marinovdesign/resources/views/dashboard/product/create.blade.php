@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
         <div class="col">
 
-            <form action="{{ route('products.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
+            <form id="add_product_form" action="{{ route('products.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
                 @csrf
 
                 <div class="col-md-6">
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label for="maintenances" class="form-label">Materials</label>
+                    <label for="maintenances" class="form-label">Maintenance tip</label>
                     <select name="maintenances[]" id="maintenances" multiple class="form-control">
                         @foreach($maintenances as $maintenance)
                         <option value="{{ $maintenance->id }}">{{ $maintenance->title }}</option>
@@ -130,7 +130,7 @@
                     @enderror
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-6">
                     <label for="images" class="form-label">Select images..</label>
                     <input type="file" name="images[]" id="images" multiple class="form-control">
                     @error('images')
@@ -154,9 +154,25 @@
 
 @section('script')
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 <script>
     $(document).ready(function() {
+        new MultiSelectTag('materials');
+        new MultiSelectTag('maintenances');
+    });
+</script>
 
+<script>
+    $(document).ready(function() {
+        $("#images").fileinput({
+            theme: 'fas',
+            showUpload: false, // Hide the upload button
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
         $('#category').change(function() {
             var category_id = $(this).val();
             if (category_id) {
